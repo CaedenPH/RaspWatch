@@ -15,5 +15,4 @@ export class CardComponent {
   
   @Input() value!: string;
   @Input() description!: string;
-
 }

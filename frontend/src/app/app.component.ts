@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavigationEnd, Router, RouterModule, RouterOutlet } from '@angular/router';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { CardComponent } from './card/card.component';
 import { HttpClientModule } from '@angular/common/http';
 
 @Component({
@@ -15,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
     RouterOutlet,
     HttpClientModule,
     SidebarComponent,
+    CardComponent
   ],
 })
 export class AppComponent {

@@ -1,21 +1,33 @@
 .card-container {
-    max-width: 15rem;
-    max-height: 10rem;
-    border-radius: 4rem;
+    max-width: 20rem;
+    background-color: var(--card);
+    margin: 3rem;
+    border-radius: 2rem;
 }
 
 .header-container {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    text-align: right;
-    border-bottom-style: groove;
-    border-bottom-color: #40485c;
+   padding-top: 2rem;
+   border-bottom: solid;
+   border-color: #7b809a33;
+}
+
+header {
+    padding: 1rem;
+}
+
+.text-container {
+    padding: 0.5rem;
 }
 
 figure {
-    top: -2rem;
+    border-radius: 0.75rem;
+    top: 5rem;
     width: 64px;
     height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
 }
+
 
