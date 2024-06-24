@@ -3,8 +3,6 @@
 #include <cstring>
 #include <iomanip>
 #include <string>
-#include <fstream>
-#include <vector>
 #include <cmath>
 #include <ctime>
 #include <sys/sysinfo.h>
@@ -70,7 +68,7 @@ bool verify_pass(const std::string &username, const std::string &password)
 
     std::string pass;
     db << "select password from accounts where username = '" << username_stream.str() << "'", soci::into(pass);
- 
+
     return (!pass.empty() && pass == password_stream.str());
 }
 
@@ -110,7 +108,7 @@ int main()
             crow::json::rvalue json = crow::json::load(exec("speedtest-cli --bytes --json"));
             double download = json["download"].d();
             double upload = json["upload"].d();
-            
+
             crow::json::wvalue ret;
             ret["download"] = download;
             ret["upload"] = upload;
@@ -125,7 +123,7 @@ int main()
     ([](const crow::request &req, crow::response &res){
         struct sysinfo info;
         float load_offset = 1.0f / (1 << SI_LOAD_SHIFT);
-       
+
         memset(&info, 0, sizeof(info));
 
         // sys info returns 0 if it succeded
@@ -152,7 +150,7 @@ int main()
     // override static file serving
     CROW_ROUTE(app, "/<path>")
     ([](const crow::request &req, crow::response &res, std::string path) {
-        
+
         crow::utility::sanitize_filename(path);
 
         if (path.find(".") == std::string::npos) {
@@ -160,7 +158,7 @@ int main()
         } else {
             res.set_static_file_info_unsafe("static/" + path);
         }
-        
+
         res.end();
     });
 
