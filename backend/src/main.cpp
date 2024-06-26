@@ -122,7 +122,7 @@ int main()
     );
 
     CROW_ROUTE(app, "/api/data/server").methods(crow::HTTPMethod::GET)
-    ([](const crow::request &req, crow::response &res){
+    ([](const crow::request &_, crow::response &res){
         struct sysinfo info;
         float load_offset = 1.0f / (1 << SI_LOAD_SHIFT);
 
@@ -151,7 +151,7 @@ int main()
 
     // override static file serving
     CROW_ROUTE(app, "/<path>")
-    ([](const crow::request &req, crow::response &res, std::string path) {
+    ([](const crow::request &_, crow::response &res, std::string path) {
 
         crow::utility::sanitize_filename(path);
 
