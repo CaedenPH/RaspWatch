@@ -2,6 +2,7 @@
     max-width: 20rem;
     background-color: var(--card);
     margin: 3rem;
+    position: relative;
     border-radius: 2rem;
 }
 
@@ -21,7 +22,7 @@ header {
 
 figure {
     border-radius: 0.75rem;
-    top: 5rem;
+    top: -3rem;
     width: 64px;
     height: 64px;
     display: flex;
