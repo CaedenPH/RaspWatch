@@ -16,7 +16,6 @@ import { CardComponent } from '../card/card.component';
 export class HomeComponent {
   @ViewChild('app-graph-card') graph!: GraphCardComponent;
   timeinterval = interval(5 * 1000);
-  _5minInterval = interval(1 * 1000);
   counter: number = 0;
   network_counter: number = 0;
   color = "background: var(--accent-gradient)";
@@ -118,7 +117,7 @@ export class HomeComponent {
     });
 
 
-  this._5minInterval.subscribe(() => {
+  this.timeinterval.subscribe(() => {
 
     axios.get("/api/data/serverspeed").then(
       (response) => {
