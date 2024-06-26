@@ -71,7 +71,7 @@ export class HomeComponent {
         // upload
         data: [],
         borderColor: '#d63384',
-        pointBackgroundColor: 'd63384'
+        pointBackgroundColor: '#d63384',
       }
     ],
     labels: []
