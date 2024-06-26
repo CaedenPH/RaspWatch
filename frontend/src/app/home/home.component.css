@@ -3,6 +3,7 @@ section {
     grid-auto-flow: column;
     grid-template-columns: min-content min-content;
     grid-template-rows: min-content min-content;
-    max-width: -webkit-fill-available;
-    overflow:scroll;
+    max-width: max-content;
+    max-height: 90%;
+    overflow-y: scroll;
 }
