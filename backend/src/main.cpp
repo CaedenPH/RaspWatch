@@ -103,6 +103,8 @@ int main()
     );
 
 
+    // TODO: This is an easy way to ddos the server
+    // FIND WAY TO RATE LIMIT THIS API
     CROW_ROUTE(app, "/api/data/serverspeed").methods(crow::HTTPMethod::GET)(
         []() {
             crow::json::rvalue json = crow::json::load(exec("speedtest-cli --bytes --json"));
